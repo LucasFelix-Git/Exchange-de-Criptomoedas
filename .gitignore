@@ -1,0 +1,7 @@
+# Executaveis
+*.exe
+*.txt
+*.o
+
+# Pastas
+output/
