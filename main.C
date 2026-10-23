@@ -22,7 +22,7 @@ int main() {
         scanf("%d", &escolha);
 
         switch (escolha) {
-        case 1:
+        case 1: {
             investidor inv;
             carregar_dados(&inv);
 
@@ -41,22 +41,28 @@ int main() {
                 printf("Senha ou CPF incorretos");
             }
             break;
-        case 2:
+        }
+            
+        case 2: {
             investidor inv;
-            carregar_dados(&inv);
 
             char cpf_digitado[12];
             char senha_digitada[7];
             char nome_digitado[50];
+            double saldo_primario = 0.00;
 
             printf("CPF: ");
             scanf("%s", cpf_digitado);
             printf("SENHA: ");
             scanf("%s", senha_digitada);
+            fgetc(stdin);
             printf("NOME: ");
-            scanf("%s", nome_digitado);
+            fgets(nome_digitado, 50, stdin);
+            nome_digitado[strcspn(nome_digitado, "\n")] = '\0';
 
-            if (fopen("dados.txt", "r") != NULL){
+            FILE *teste = fopen("dados.txt", "r");
+
+            if (teste != NULL){
                 printf("Você ja efetuou o cadastro");
         
             } else {
@@ -67,15 +73,25 @@ int main() {
                 return 1;
             }
 
-            investidor inv = {cpf_digitado, senha_digitada, nome_digitado};
+            strcpy(inv.cpf, cpf_digitado);
+            strcpy(inv.senha, senha_digitada);
+            strcpy(inv.nome, nome_digitado);
 
             fprintf(fp, "%s\n", inv.cpf);
             fprintf(fp, "%s\n", inv.senha);
             fprintf(fp, "%s\n", inv.nome);
+            fprintf(fp, "%.2f\n", saldo_primario);
+            fprintf(fp, "%.2f\n", saldo_primario);
+            fprintf(fp, "%.2f\n", saldo_primario);
+            fprintf(fp, "%.2f\n", saldo_primario);
+            fclose(fp);
             }
             break;
+        } 
+            
         default:
             break;
         }
+        break;
     }
 }
