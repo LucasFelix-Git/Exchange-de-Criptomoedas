@@ -2,6 +2,7 @@
 #include <string.h>
 #include "struct/investidor.h"
 #include "carregar_dados.h"
+#include "menu_investidor.h"
 
 int main() {
 
@@ -36,7 +37,7 @@ int main() {
 
             if (strcmp(cpf_digitado, inv.cpf) == 0 && strcmp(senha_digitada, inv.senha) == 0){
                 printf("Acesso liberado");
-                // menu_investidor()
+                menu_investidor(&inv);
             } else{
                 printf("Senha ou CPF incorretos");
             }
@@ -95,3 +96,4 @@ int main() {
         break;
     }
 }
+
