@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <string.h>
-#include "struct/investidor.h"
+#include <stdlib.h>
+#include <time.h>
+#include "investidor.h"
 #include "carregar_dados.h"
 #include "menu_investidor.h"
 
 int main() {
-
+    srand(time(NULL));
     int escolha;
     while(1){
         printf("\n");
@@ -89,11 +91,11 @@ int main() {
             }
             break;
         } 
-            
+        case 3:
+            return 0;
+
         default:
             break;
         }
-        break;
     }
 }
-

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "struct/investidor.h"
+#include "investidor.h"
 
 int carregar_dados(investidor *inv) {
     FILE *fp = fopen("dados.txt", "r");
