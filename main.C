@@ -30,9 +30,9 @@ int main() {
             char cpf_digitado[12];
             char senha_digitada[7];
 
-            printf("CPF: ");
+            printf("  CPF: ");
             scanf("%s", cpf_digitado);
-            printf("SENHA: ");
+            printf("  SENHA: ");
             scanf("%s", senha_digitada);
 
             if (strcmp(cpf_digitado, inv.cpf) == 0 && strcmp(senha_digitada, inv.senha) == 0){
